@@ -300,11 +300,11 @@ export default function Home() {
               <div className="flex flex-col gap-6 text-[13px] text-[#4A4A46] font-body">
                 <div>
                   <div className="text-[9px] tracking-[0.3em] uppercase text-[#0B4A46] mb-1">Call us at</div>
-                  <div className="text-lg font-display font-light"><a href="tel:+92333274900">+92-333-274900</a></div>
+                  <div className="text-lg font-display font-light"><a href="tel:+923332174900">+92-333-2174900</a></div>
                 </div>
                 <div>
                   <div className="text-[9px] tracking-[0.3em] uppercase text-[#0B4A46] mb-1">Visit us at</div>
-                  <div>F.L. 61, Gulshan-e-Iqbal, Block 6<br />Main Rashid Minhas Road<br />Karachi, Pakistan</div>
+                  <div>FL 6/1, Gulshan-e-Iqbal, Block 6<br />Main Rashid Minhas Road<br />Karachi, Pakistan</div>
                 </div>
               </div>
             </div>

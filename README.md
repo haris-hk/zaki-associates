@@ -39,3 +39,14 @@ Consultation forms forward enquiries via Resend. The insights form forwards a re
 Existing company details, staff biographies, credentials and contact numbers were preserved from the supplied design. Verify their accuracy before launch. Existing Unsplash photographs are illustrative and should be replaced with approved company and team photography if appropriate.
 
 Page content is in `src/pages`. Shared navigation, enquiry forms and effects are in `src/components`. Form handling is in `api/enquiry.mjs`. Animations respect reduced-motion preferences.
+
+## About page content sources
+
+The About page and three team biographies were updated from the firm's published pages on 6 October 2026:
+
+- https://zakiassociates.com/about/
+- https://zakiassociates.com/team/mohammed-zaki/
+- https://zakiassociates.com/team/m-javed-alam-siddiqi/
+- https://zakiassociates.com/team/asad-ali-mulji/
+
+Team information is maintained in `src/data/team.ts`. Portraits are the three files supplied in `src/assets`; their assignments match the published profile image filenames. Unsubstantiated placeholder team members, credentials, founder quotes and the firm timeline were removed.

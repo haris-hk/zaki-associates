@@ -57,14 +57,14 @@ export default function Footer() {
             <div className="flex flex-col gap-4 text-[#F7F8F4]/70 text-[12px] leading-relaxed">
               <div>
                 <span className="text-[#F7F8F4]/40 text-[9px] tracking-widest uppercase">P: </span>
-                <a href="tel:+92333274900">+92-333-274900</a>
+                <a href="tel:+923332174900">+92-333-2174900</a>
               </div>
               <div>
                 <span className="text-[#F7F8F4]/40 text-[9px] tracking-widest uppercase">E: </span>
                 <a className="break-all" href="mailto:mzaki@zakiassociates.com">mzaki@zakiassociates.com</a>
               </div>
               <div className="text-[11px] leading-relaxed">
-                F.L. 61, Gulshan-e-Iqbal, Block 6<br />
+                FL 6/1, Gulshan-e-Iqbal, Block 6<br />
                 Main Rashid Minhas Road<br />
                 Karachi, Pakistan
               </div>

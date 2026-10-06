@@ -280,11 +280,11 @@ export default function Services() {
               <div className="flex flex-col gap-6 text-[13px] text-[#F7F8F4]/60 font-body">
                 <div>
                   <div className="text-[9px] tracking-[0.3em] uppercase text-[#B9FF8A] mb-1">Call us at</div>
-                  <div className="text-xl font-display font-light text-[#F7F8F4]"><a href="tel:+92333274900">+92-333-274900</a></div>
+                  <div className="text-xl font-display font-light text-[#F7F8F4]"><a href="tel:+923332174900">+92-333-2174900</a></div>
                 </div>
                 <div>
                   <div className="text-[9px] tracking-[0.3em] uppercase text-[#B9FF8A] mb-1">Visit us at</div>
-                  <div>F.L. 61, Gulshan-e-Iqbal, Block 6<br />Main Rashid Minhas Road<br />Karachi, Pakistan</div>
+                  <div>FL 6/1, Gulshan-e-Iqbal, Block 6<br />Main Rashid Minhas Road<br />Karachi, Pakistan</div>
                 </div>
               </div>
             </div>

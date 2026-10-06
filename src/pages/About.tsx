@@ -1,351 +1,245 @@
-import EnquiryForm from '../components/EnquiryForm';
-import { useState } from 'react';
-import { Link } from 'react-router';
-import StarburstIcon from '../components/StarburstIcon';
-
-const timeline = [
-  { decade: '1980s', title: 'The Beginning', desc: 'The firm establishes its foundation in accounting and professional advisory services across Karachi.' },
-  { decade: '1990s', title: 'Building Trust', desc: 'Expanding relationships across businesses and organizations, deepening our practice.' },
-  { decade: '2000s', title: 'Expanding Expertise', desc: 'Broadening capabilities across audit, taxation and financial advisory disciplines.' },
-  { decade: '2010s', title: 'Strategic Advisory', desc: 'Evolving from traditional accounting into broader financial leadership and governance.' },
-  { decade: 'TODAY', title: 'Looking Ahead', desc: 'Combining established expertise with modern financial thinking to serve the next generation of clients.' },
-];
+import { Link } from "react-router"
+import EnquiryForm from "../components/EnquiryForm"
+import StarburstIcon from "../components/StarburstIcon"
+import { team } from "../data/team"
 
 const principles = [
-  { label: 'Clarity', desc: 'Making complex financial information easier to understand and act upon.' },
-  { label: 'Discipline', desc: 'Building decisions around rigorous analysis and sound processes.' },
-  { label: 'Perspective', desc: 'Looking beyond the immediate numbers to the underlying business reality.' },
-  { label: 'Partnership', desc: 'Working alongside clients through changing business conditions.' },
-];
+  [
+    "Professional independence",
+    "Objective advice, with the clarity to make informed decisions.",
+  ],
+  [
+    "Ethical integrity",
+    "A commitment to transparency in the way we work and advise.",
+  ],
+  [
+    "Governance discipline",
+    "Sound controls and compliance at the heart of financial management.",
+  ],
+  [
+    "Lasting relationships",
+    "An understanding of your business that develops over time.",
+  ],
+]
+const founder = team[0]
 
-const process = [
-  { n: '01', title: 'Initial Consultation', desc: 'Understanding your financial structure, objectives, and regulatory requirements.' },
-  { n: '02', title: 'Assessment & Review', desc: 'Comprehensive evaluation of financial records, internal controls and compliance status.' },
-  { n: '03', title: 'Strategic Structuring', desc: 'Developing practical solutions aligned with your organization\'s goals and risk appetite.' },
-  { n: '04', title: 'Implementation & Ongoing Advisory', desc: 'Continuous support to maintain compliance, efficiency and financial clarity over time.' },
-];
-
-const whyItems = [
-  { title: 'Decades of Experience', desc: 'More than four decades of professional financial expertise across diverse industries.' },
-  { title: 'Multidisciplinary Thinking', desc: 'Accounting, audit, taxation and advisory working together as an integrated whole.' },
-  { title: 'Personal Attention', desc: 'Senior-level involvement and direct communication on every mandate.' },
-  { title: 'Long-Term Perspective', desc: 'Advice designed around sustainable business performance, not short-term appearances.' },
-];
-
-const team = [
-  {
-    id: 'zaki',
-    name: 'M. Zaki',
-    role: 'Principal / Founder',
-    area: 'All Practice Areas',
-    img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=700&fit=crop&auto=format',
-  },
-  {
-    id: 'ayesha',
-    name: 'Ayesha Khan',
-    role: 'Partner',
-    area: 'Audit & Assurance',
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=700&fit=crop&auto=format',
-  },
-  {
-    id: 'hamza',
-    name: 'Hamza Rahman',
-    role: 'Director',
-    area: 'Tax Advisory',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop&auto=format',
-  },
-  {
-    id: 'sara',
-    name: 'Sara Ahmed',
-    role: 'Senior Manager',
-    area: 'Financial Advisory',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&auto=format',
-  },
-];
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 text-[10px] tracking-[0.24em] uppercase mb-6">
+      <span className="w-7 h-px bg-current" />
+      {children}
+    </div>
+  )
+}
 
 export default function About() {
-  const [openProcess, setOpenProcess] = useState<number | null>(0);
-
   return (
-    <div className="min-h-screen">
-      {/* ABOUT HERO */}
-      <section className="bg-[#F7F8F4] pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <div className="about-page">
+      <section className="bg-offwhite pt-28 lg:pt-40 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-2 mb-8 text-[10px] tracking-[0.15em] uppercase font-body text-[#4A4A46]">
-            <Link to="/" className="hover:text-[#0B4A46] transition-colors">Home</Link>
-            <span className="opacity-40">›</span>
-            <span className="text-[#0B4A46]">About</span>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <nav
+            aria-label="Breadcrumb"
+            className="text-xs text-charcoal-muted mb-12"
+          >
+            <Link to="/" className="hover:text-teal">
+              Home
+            </Link>
+            <span className="mx-3" aria-hidden="true">
+              /
+            </span>
+            <span aria-current="page">Our firm</span>
+          </nav>
+          <div className="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-20 items-end">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-6 h-px bg-[#0B4A46]" />
-                <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">
-                  ABOUT ZAKI & ASSOCIATES
-                </span>
-              </div>
-              <h1 className="font-display text-5xl lg:text-6xl font-light text-[#1A1A18] leading-[1.05] mb-8">
-                Experience That<br />
-                Shapes Better<br />
-                Decisions.
+              <Eyebrow>About Zaki & Associates</Eyebrow>
+              <h1 className="font-display text-[clamp(3rem,6vw,5.5rem)] font-light leading-[1.06] tracking-tight">
+                Experienced minds.
+                <br />
+                <em className="text-teal">Clearer decisions.</em>
               </h1>
-              <p className="text-[15px] text-[#4A4A46] leading-relaxed font-body font-light max-w-lg">
-                For more than four decades, Zaki & Associates has helped organizations navigate financial complexity with clarity, discipline, and strategic insight.
+            </div>
+            <div className="lg:pb-2">
+              <p className="text-base text-charcoal-muted leading-8 max-w-lg">
+                We bring financial leadership, accounting and advisory together
+                to help businesses and individuals navigate their next decision
+                with confidence.
               </p>
+              <div className="flex flex-wrap gap-7 mt-8">
+                <a href="#founder" className="about-text-link">
+                  Meet our founder <span aria-hidden="true">↘</span>
+                </a>
+                <a href="#team" className="about-text-link">
+                  Our people <span aria-hidden="true">↘</span>
+                </a>
+              </div>
             </div>
-
-            {/* Hero image */}
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-y-8 left-3 w-px bg-[#0B4A46]/30 z-10" />
-              <div className="absolute inset-y-8 left-6 w-px bg-[#0B4A46]/10 z-10" />
-              <img decoding="async" loading="lazy"
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=800&fit=crop&auto=format"
-                alt="Zaki & Associates office"
-                className="w-full h-[500px] object-cover"
-              />
-            </div>
+          </div>
+          <div className="mt-14 lg:mt-20 border-t border-teal/20 pt-5 flex flex-wrap justify-between gap-4 text-[10px] tracking-[0.2em] uppercase text-teal">
+            <span>Financial management · Audit · Tax · Advisory</span>
+            <span>Karachi, Pakistan</span>
           </div>
         </div>
       </section>
 
-      {/* OUR STORY — TIMELINE */}
-      <section className="bg-[#EEF2ED] py-24 lg:py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-6 h-px bg-[#0B4A46]" />
-            <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">OUR STORY</span>
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] mb-16">
-            Four Decades of<br />Financial Perspective.
-          </h2>
-
-          {/* Editorial timeline — horizontal scroll on desktop */}
-          <div className="flex flex-col lg:flex-row gap-0 border-t border-[#1A1A18]/10">
-            {timeline.map((item, i) => (
-              <div
-                key={i}
-                className="flex-1 border-b lg:border-b-0 lg:border-r border-[#1A1A18]/10 p-8 lg:p-10 last:border-r-0 last:border-b-0"
-              >
-                <div className="font-display text-5xl lg:text-6xl font-light text-[#0B4A46]/15 leading-none mb-4">
-                  {item.decade}
-                </div>
-                <div className="w-4 h-px bg-[#B9FF8A] mb-4" />
-                <h3 className="font-display text-lg font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="text-[12px] text-[#4A4A46] leading-relaxed font-body">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LEADERSHIP */}
-      <section className="bg-[#F7F8F4] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-6 h-px bg-[#0B4A46]" />
-              <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">LEADERSHIP</span>
+      <section id="founder" className="bg-sage py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-[.95fr_1.05fr] gap-12 lg:gap-20 items-center">
+          <div className="founder-frame relative bg-[#dce4db] overflow-hidden">
+            <div className="absolute top-7 left-7 text-teal/60">
+              <StarburstIcon size={40} />
             </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] leading-tight mb-12">
-              Experience You<br />Can Build On.
-            </h2>
-
-            <div className="flex items-start gap-8">
-              <div className="relative shrink-0">
-                <div className="absolute inset-y-0 left-0 w-0.5 bg-[#0B4A46]" />
-                <img decoding="async" loading="lazy"
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=380&fit=crop&auto=format"
-                  alt="M. Zaki"
-                  className="w-32 h-40 object-cover pl-3"
-                />
-              </div>
-              <div>
-                <div className="font-display text-2xl font-light text-[#1A1A18] mb-1">M. Zaki</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-[#0B4A46] font-body mb-6">
-                  Founder / Principal
-                </div>
-                <p className="text-[13px] text-[#4A4A46] leading-relaxed font-body mb-6">
-                  With more than four decades at the forefront of professional financial practice in Pakistan, M. Zaki has built a reputation for disciplined analysis, personal attention, and long-term client relationships. His work spans accounting, audit, tax advisory, and strategic financial leadership across private enterprises, family offices, and institutional clients.
-                </p>
-                <Link
-                  to="/team/zaki"
-                  className="text-[#0B4A46] text-[10px] tracking-[0.2em] uppercase font-body font-medium border-b border-[#0B4A46] pb-0.5 hover:opacity-60 transition-opacity"
-                >
-                  VIEW PROFILE →
-                </Link>
-              </div>
+            <div className="absolute top-8 right-7 text-[10px] tracking-[.2em] uppercase text-teal">
+              Our founder / 01
             </div>
-          </div>
-
-          {/* Decorative right column */}
-          <div className="hidden lg:flex flex-col justify-between h-full">
-            <img decoding="async" loading="lazy"
-              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=500&fit=crop&auto=format"
-              alt="Financial documents"
-              className="w-full h-80 object-cover"
+            <img
+              src={founder.image}
+              alt="Mohammed Zaki, founder of Zaki & Associates"
+              width="608"
+              height="658"
+              fetchPriority="high"
+              decoding="async"
+              className="relative w-full aspect-[1/1.08] object-contain object-bottom pt-16 px-4 sm:px-8"
             />
-            <div className="bg-[#0B4A46] p-8 mt-4">
-              <div className="font-display italic text-[#F7F8F4]/80 text-lg leading-relaxed">
-                "Precision and perspective — the two things every sound financial decision requires."
+            <div className="relative bg-teal text-offwhite px-7 py-6 flex items-center justify-between gap-4">
+              <div>
+                <p className="font-display text-2xl">Mohammed Zaki</p>
+                <p className="text-[10px] uppercase tracking-[.2em] text-lime mt-2">
+                  Founder · Chartered Accountant
+                </p>
               </div>
-              <div className="mt-4 text-[10px] tracking-[0.2em] uppercase text-[#B9FF8A] font-body">
-                — M. Zaki
-              </div>
+              <StarburstIcon size={25} color="#B9FF8A" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* PHILOSOPHY */}
-      <section className="bg-[#0B4A46] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="font-display text-5xl lg:text-7xl font-light text-[#F7F8F4] leading-[1.0] mb-6 tracking-tight">
-            NUMBERS TELL<br />
-            THE STORY.<br />
-            <span className="text-[#B9FF8A]">CONTEXT TELLS YOU</span><br />
-            WHAT IT MEANS.
-          </h2>
-          <p className="text-[15px] text-[#F7F8F4]/60 leading-relaxed max-w-xl font-body font-light mb-20">
-            Our role goes beyond preparing financial information. We help our clients understand what the numbers mean, where opportunities exist, and how today's decisions shape tomorrow's performance.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-px bg-[#F7F8F4]/10">
-            {principles.map((p) => (
-              <div key={p.label} className="bg-[#0B4A46] p-8 hover:bg-[#063D3A] transition-colors duration-300">
-                <StarburstIcon size={24} color="#B9FF8A" className="mb-6" />
-                <h3 className="font-display text-xl font-light text-[#F7F8F4] mb-3 uppercase tracking-wide">
-                  {p.label}
-                </h3>
-                <p className="text-[12px] text-[#F7F8F4]/50 leading-relaxed font-body">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW WE WORK */}
-      <section className="bg-[#F7F8F4] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-6 h-px bg-[#0B4A46]" />
-              <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">OUR PROCESS</span>
-            </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] leading-tight">
-              A STRUCTURED APPROACH.<br />
-              <em className="not-italic text-[#0B4A46]">A PERSONAL EXPERIENCE.</em>
+          <div className="text-teal">
+            <Eyebrow>A lifetime of perspective</Eyebrow>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.1] mb-7">
+              Leadership shaped
+              <br />
+              by experience.
             </h2>
-          </div>
-
-          <div className="border-t border-[#1A1A18]/10">
-            {process.map((item, i) => (
-              <div key={i} className="border-b border-[#1A1A18]/10">
-                <button
-                  className="w-full flex items-center justify-between py-6 text-left group"
-                  aria-expanded={openProcess === i}
-                    aria-controls={`process-${i}`}
-                    onClick={() => setOpenProcess(openProcess === i ? null : i)}
-                >
-                  <div className="flex items-center gap-6">
-                    <span className="text-[#0B4A46] font-display text-3xl font-light opacity-30">
-                      {item.n}
-                    </span>
-                    <span className="font-body font-medium text-[14px] tracking-[0.03em] text-[#1A1A18] group-hover:text-[#0B4A46] transition-colors">
-                      {item.title}
-                    </span>
-                  </div>
-                  <span className="text-[#0B4A46] text-lg transition-transform duration-300 shrink-0"
-                    style={{ transform: openProcess === i ? 'rotate(45deg)' : 'rotate(0)' }}>
-                    +
-                  </span>
-                </button>
-                <div
-                  id={`process-${i}`}
-                    hidden={openProcess !== i}
-                    className="accordion-panel"
-                >
-                  <p className="text-[13px] text-[#4A4A46] leading-relaxed pb-6 pl-16 font-body">
-                    {item.desc}
+            <p className="text-charcoal-muted text-[15px] leading-8">
+              {founder.bio}
+            </p>
+            <p className="text-charcoal-muted text-[15px] leading-8 mt-5">
+              That experience informs a practice built around financial
+              discipline, transparent governance and thoughtful advice.
+            </p>
+            <div className="grid grid-cols-3 gap-4 border-y border-teal/15 my-9 py-7">
+              {[
+                ["40+", "Years of experience"],
+                ["~32", "Years at Interflow"],
+                ["8", "Years in pharma"],
+              ].map(([value, label]) => (
+                <div key={label}>
+                  <p className="font-display text-4xl sm:text-5xl font-light">
+                    {value}
+                  </p>
+                  <p className="text-[10px] leading-5 uppercase tracking-wider mt-2 text-charcoal-muted">
+                    {label}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <Link to="/team/zaki" className="about-text-link">
+              Explore Mohammed’s profile <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* WHY CLIENTS CHOOSE US */}
-      <section className="bg-[#EEF2ED] py-24 lg:py-32">
+      <section className="bg-teal text-offwhite py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-6 h-px bg-[#0B4A46]" />
-            <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">WHY US</span>
-          </div>
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] mb-16">
-            Why Clients Choose Us
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-[#1A1A18]/10">
-            {whyItems.map((item, i) => (
-              <div
-                key={i}
-                className={`p-10 lg:p-12 border-[#1A1A18]/10 ${
-                  i % 2 === 0 ? 'lg:border-r' : ''
-                } ${i < 2 ? 'border-b' : ''}`}
-              >
-                <div className="text-[#0B4A46]/20 font-display text-6xl font-light leading-none mb-4">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3 uppercase tracking-wide">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] text-[#4A4A46] leading-relaxed font-body">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <section id="team" className="bg-[#F7F8F4] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between mb-16 flex-wrap gap-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 mb-12 lg:mb-16">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-6 h-px bg-[#0B4A46]" />
-                <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">OUR PEOPLE</span>
+              <div className="text-lime">
+                <Eyebrow>What guides us</Eyebrow>
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] leading-tight">
-                The People Behind<br />The Perspective.
+              <h2 className="font-display text-4xl sm:text-5xl font-light leading-tight">
+                Clarity in the numbers.
+                <br />
+                <em className="text-lime">Integrity in the advice.</em>
               </h2>
             </div>
+            <p className="text-offwhite/75 text-[15px] leading-8 lg:pt-12">
+              Our firm provides accounting, audit, taxation and financial
+              advisory services. We believe lasting progress begins with clear
+              financial information, disciplined governance and a practical
+              understanding of regulatory responsibilities.
+            </p>
           </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-offwhite/20">
+            {principles.map(([title, description], i) => (
+              <div key={title} className="pt-8 pb-4 sm:pr-7">
+                <span className="text-lime text-[11px] tracking-widest">
+                  0{i + 1}
+                </span>
+                <h3 className="font-display text-2xl font-light mt-5 mb-3">
+                  {title}
+                </h3>
+                <p className="text-sm text-offwhite/70 leading-7">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5 bg-[#1A1A18]/10">
-            {team.map((member) => (
+      <section id="team" className="bg-offwhite py-16 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-7 mb-12">
+            <div className="text-teal">
+              <Eyebrow>Our people</Eyebrow>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-tight text-charcoal">
+                The people behind
+                <br />
+                <em className="text-teal">the perspective.</em>
+              </h2>
+            </div>
+            <p className="max-w-sm text-[15px] text-charcoal-muted leading-8">
+              Experience across financial leadership, regulatory advisory and
+              corporate finance. Get to know the people behind our practice.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-9 lg:gap-8">
+            {team.map((member, i) => (
               <Link
                 key={member.id}
                 to={`/team/${member.id}`}
-                className="group relative bg-[#F7F8F4] overflow-hidden block"
+                className="team-card group block min-w-0"
               >
-                <div className="relative overflow-hidden h-80">
-                  <img decoding="async" loading="lazy"
-                    src={member.img}
+                <div className="relative bg-sage overflow-hidden aspect-[4/4.5]">
+                  <span className="absolute z-10 top-5 left-5 text-[10px] tracking-widest text-teal/70">
+                    0{i + 1} / OUR PEOPLE
+                  </span>
+                  <img
+                    src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                    width="608"
+                    height="658"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-contain object-bottom px-3 pt-12 transition-transform duration-700 group-hover:scale-[1.025] group-focus-visible:scale-[1.025]"
                   />
-                  <div className="absolute inset-0 bg-[#0B4A46]/0 group-hover:bg-[#0B4A46]/60 transition-all duration-400" />
-                  <div className="absolute inset-0 flex items-end justify-start p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-[#B9FF8A] text-[10px] tracking-[0.2em] uppercase font-body">
-                      VIEW PROFILE →
-                    </span>
-                  </div>
+                  <span
+                    className="absolute right-4 bottom-4 w-11 h-11 flex items-center justify-center bg-lime text-teal text-xl transition-transform group-hover:-translate-y-1"
+                    aria-hidden="true"
+                  >
+                    ↗
+                  </span>
                 </div>
-                <div className="p-6 border-t border-[#1A1A18]/10">
-                  <div className="font-display text-lg font-light text-[#1A1A18] mb-1">{member.name}</div>
-                  <div className="text-[10px] tracking-[0.15em] uppercase text-[#0B4A46] font-body">{member.role}</div>
-                  <div className="text-[10px] tracking-[0.1em] text-[#4A4A46] font-body mt-0.5">{member.area}</div>
+                <div className="pt-6">
+                  <p className="text-[10px] uppercase tracking-[.14em] text-teal leading-5 min-h-10">
+                    {member.role}
+                  </p>
+                  <h3 className="font-display text-[27px] font-light mt-2 mb-3">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-charcoal-muted leading-7">
+                    {member.summary}
+                  </p>
+                  <span className="about-text-link mt-6">
+                    View profile <span aria-hidden="true">→</span>
+                  </span>
                 </div>
               </Link>
             ))}
@@ -353,63 +247,58 @@ export default function About() {
         </div>
       </section>
 
-      {/* CLOSING CTA */}
-      <section className="bg-[#0B4A46] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center">
-          <h2 className="font-display text-4xl lg:text-5xl font-light text-[#F7F8F4] leading-tight">
-            Let's Build Clarity<br />
-            Into Your Next Decision.
-          </h2>
+      <section className="bg-sage py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-20">
+          <div className="text-teal">
+            <Eyebrow>Expertise, working together</Eyebrow>
+            <h2 className="font-display text-4xl sm:text-5xl font-light leading-tight">
+              A broader view of
+              <br />
+              your financial future.
+            </h2>
+          </div>
           <div>
-            <p className="text-[#F7F8F4]/60 text-[15px] leading-relaxed font-body font-light mb-10">
-              Whether you need reliable financial management, independent assurance or strategic advisory, we're here to help.
+            <p className="text-charcoal-muted text-[15px] leading-8 mb-8">
+              From day-to-day financial management to tax compliance and
+              decisions about capital, our practice brings complementary
+              experience to the challenges you face.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/about#contact"
-                className="bg-[#B9FF8A] text-[#0B4A46] text-[11px] tracking-[0.2em] uppercase font-body font-medium px-8 py-4 hover:bg-[#9EE86A] transition-colors duration-200"
-              >
-                Schedule a Consultation →
-              </Link>
-              <Link
-                to="/services"
-                className="border border-[#F7F8F4]/30 text-[#F7F8F4] text-[11px] tracking-[0.2em] uppercase font-body font-medium px-8 py-4 hover:border-[#F7F8F4]/60 transition-colors duration-200"
-              >
-                Explore Our Services
-              </Link>
-            </div>
+            <Link to="/services" className="about-text-link">
+              Explore our services <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section id="contact" className="bg-[#EEF2ED] py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-6 h-px bg-[#0B4A46]" />
-                <span className="text-[#0B4A46] text-[10px] tracking-[0.3em] uppercase font-body">GET IN TOUCH</span>
-              </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-light text-[#1A1A18] leading-tight mb-8">
-                Change Starts<br />With a Conversation
-              </h2>
-              <div className="flex flex-col gap-6 text-[13px] text-[#4A4A46] font-body">
-                <div>
-                  <div className="text-[9px] tracking-[0.3em] uppercase text-[#0B4A46] mb-1">Call us at</div>
-                  <div className="text-xl font-display font-light"><a href="tel:+92333274900">+92-333-274900</a></div>
-                </div>
-                <div>
-                  <div className="text-[9px] tracking-[0.3em] uppercase text-[#0B4A46] mb-1">Visit us at</div>
-                  <div>F.L. 61, Gulshan-e-Iqbal, Block 6<br />Main Rashid Minhas Road<br />Karachi, Pakistan</div>
-                </div>
-              </div>
-            </div>
-
-            <EnquiryForm />
+      <section id="contact" className="bg-offwhite py-16 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="text-teal">
+            <Eyebrow>Start a conversation</Eyebrow>
+            <h2 className="font-display text-4xl sm:text-5xl font-light leading-tight mb-7">
+              Your next decision.
+              <br />
+              <em>Let’s bring clarity.</em>
+            </h2>
+            <p className="text-charcoal-muted text-[15px] leading-8 max-w-sm mb-10">
+              Tell us what your business needs. We’ll help you find the right
+              place to start.
+            </p>
+            <a
+              href="tel:+923332174900"
+              className="block font-display text-2xl mb-4"
+            >
+              +92-333-2174900
+            </a>
+            <p className="text-sm text-charcoal-muted leading-7">
+              FL 6/1, Gulshan-e-Iqbal, Block 6<br />
+              Main Rashid Minhas Road
+              <br />
+              Karachi, Pakistan
+            </p>
           </div>
+          <EnquiryForm />
         </div>
       </section>
     </div>
-  );
+  )
 }
