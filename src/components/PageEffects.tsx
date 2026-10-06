@@ -28,7 +28,7 @@ export default function PageEffects() {
       else window.scrollTo({ top: 0, behavior: "instant" })
     })
     const elements = Array.from(
-      document.querySelectorAll<HTMLElement>("main section > div"),
+      document.querySelectorAll<HTMLElement>("main section:not(.home-hero) > div"),
     )
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
       return () => cancelAnimationFrame(frame)

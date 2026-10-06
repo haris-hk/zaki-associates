@@ -1,3 +1,4 @@
+import HomeHero from '../components/HomeHero';
 import EnquiryForm from '../components/EnquiryForm';
 import { useState } from 'react';
 import { Link } from 'react-router';
@@ -45,80 +46,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* HERO */}
-      <section className="relative bg-[#0B4A46] min-h-screen flex items-center overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <img decoding="async" fetchPriority="high"
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&h=1000&fit=crop&auto=format"
-            alt="Modern architecture"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B4A46] via-[#0B4A46]/90 to-[#0B4A46]/40" />
-        </div>
-
-        {/* Vertical bar motif */}
-        <div className="absolute right-0 top-0 bottom-0 w-px bg-[#B9FF8A]/20" style={{ right: '40%' }} />
-        <div className="absolute right-[calc(40%+16px)] top-20 bottom-20 w-px bg-[#F7F8F4]/10" />
-
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 w-full grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-px bg-[#B9FF8A]" />
-              <span className="text-[#B9FF8A] text-[10px] tracking-[0.3em] uppercase font-body">
-                ESTABLISHED OVER FOUR DECADES
-              </span>
-            </div>
-            <h1 className="font-display text-5xl lg:text-6xl xl:text-7xl text-[#F7F8F4] leading-[1.05] font-light mb-8">
-              Reliable Financial<br />
-              Leadership Backed<br />
-              by Four Decades of{' '}
-              <em className="not-italic text-[#B9FF8A]">Expertise.</em>
-            </h1>
-            <p className="text-[#F7F8F4]/60 text-[15px] leading-relaxed max-w-lg mb-10 font-body font-light">
-              Zaki & Associates delivers comprehensive accounting, audit, tax, and strategic financial advisory services grounded in over 40 years of professional leadership, governance experience, and regulatory discipline.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/about#contact"
-                className="bg-[#B9FF8A] text-[#0B4A46] text-[11px] tracking-[0.2em] uppercase font-body font-medium px-8 py-4 hover:bg-[#9EE86A] transition-colors duration-200"
-              >
-                Schedule a Consultation →
-              </Link>
-              <Link
-                to="/services"
-                className="border border-[#F7F8F4]/30 text-[#F7F8F4] text-[11px] tracking-[0.2em] uppercase font-body font-medium px-8 py-4 hover:border-[#F7F8F4]/60 transition-colors duration-200"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
-
-          {/* Hero image panel */}
-          <div className="relative hidden lg:block">
-            <div className="relative overflow-hidden">
-              <div className="absolute inset-y-0 left-0 w-1 bg-[#B9FF8A]/60 z-10" />
-              <img decoding="async" loading="lazy"
-                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&h=900&fit=crop&auto=format"
-                alt="Professional office"
-                className="w-full h-[580px] object-cover grayscale-[20%] brightness-90"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0B4A46]/40" />
-            </div>
-            {/* Floating stat */}
-            <div className="absolute -bottom-6 -left-8 bg-[#063D3A] border border-[#F7F8F4]/10 p-6">
-              <div className="font-display text-4xl text-[#B9FF8A] font-light">40+</div>
-              <div className="text-[10px] tracking-[0.2em] uppercase text-[#F7F8F4]/50 mt-1">Years of Practice</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <div className="w-px h-12 bg-[#F7F8F4]/20 animate-pulse" />
-          <span className="text-[#F7F8F4]/30 text-[9px] tracking-[0.3em] uppercase">Scroll</span>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* TRUST STRIP */}
       <section className="bg-[#063D3A] border-t border-[#F7F8F4]/10">
@@ -137,7 +65,7 @@ export default function Home() {
       </section>
 
       {/* CORE SERVICES */}
-      <section className="bg-[#F7F8F4] py-24 lg:py-32">
+      <section id="home-services" className="bg-[#F7F8F4] py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-start justify-between mb-16 flex-wrap gap-8">
             <div>
