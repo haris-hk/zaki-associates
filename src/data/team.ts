@@ -1,8 +1,9 @@
+import usmanPortrait from "../assets/WhatsApp Image 2026-10-06 at 19.02.05.jpeg"
 import zakiPortrait from "../assets/Mohammed-Zaki-1-1.png"
 import javedPortrait from "../assets/1221.png"
 import asadPortrait from "../assets/121.png"
 
-// Verified against the firm's About and individual profile pages, October 2026.
+// Founding team verified against published profiles; Usman’s professional details supplied in his 2026 CV.
 export const team = [
   {
     id: "zaki",
@@ -94,5 +95,38 @@ export const team = [
     ],
     memberships: [],
     source: "https://zakiassociates.com/team/asad-ali-mulji/",
+  },
+  {
+    id: "usman-shaikh",
+    name: "Usman Shaikh",
+    role: "Fellow Chartered Accountant (FCA)",
+    area: "Financial leadership & internal audit",
+    image: usmanPortrait,
+    portraitKind: "photo",
+    email: "",
+    years: "20+",
+    summary:
+      "Financial leadership, planning and internal audit experience across Pakistan and Saudi Arabia.",
+    bio: "Usman Shaikh is a Fellow Chartered Accountant with over 20 years of experience in financial management, audit, planning and performance management. His career spans CFO roles in media and lubricants, alongside internal audit leadership in Saudi Arabia. He brings practical expertise in budgeting, financial reporting and internal controls, helping leadership teams understand performance and strengthen business decisions.",
+    experience: [
+      "CFO roles at Open Gate Media and Consultancy, Hascol Lubricants and Airwaves Media within Interflow Group.",
+      "Led the internal audit function at Anaam International Holding Group in Jeddah, Saudi Arabia.",
+      "Served as General Manager Finance & Corporate Affairs at Saima Packaging.",
+      "Began his assurance and advisory career at A. F. Ferguson & Co., working on audits and due diligence.",
+    ],
+    expertise: [
+      "Financial planning & budgeting",
+      "Financial reporting & analysis",
+      "Internal audit & risk management",
+      "Internal controls",
+      "Performance management",
+      "Costing & management accounting",
+    ],
+    qualifications: [
+      "Fellow Chartered Accountant (FCA), Institute of Chartered Accountants of Pakistan",
+      "Bachelor of Commerce, University of Karachi",
+    ],
+    memberships: [],
+    source: "Professional biography supplied by the firm, October 2026",
   },
 ]

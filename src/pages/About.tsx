@@ -200,7 +200,7 @@ export default function About() {
               corporate finance. Get to know the people behind our practice.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-9 lg:gap-8">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-9 lg:gap-8">
             {team.map((member, i) => (
               <Link
                 key={member.id}
@@ -208,7 +208,13 @@ export default function About() {
                 className="team-card group block min-w-0"
               >
                 <div className="relative bg-sage overflow-hidden aspect-[4/4.5]">
-                  <span className="absolute z-10 top-5 left-5 text-[10px] tracking-widest text-teal/70">
+                  <span
+                    className={`absolute z-10 top-5 left-5 text-[10px] tracking-widest ${
+                      member.portraitKind === "photo"
+                        ? "text-white"
+                        : "text-teal/70"
+                    }`}
+                  >
                     0{i + 1} / OUR PEOPLE
                   </span>
                   <img
@@ -218,7 +224,11 @@ export default function About() {
                     height="658"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-contain object-bottom px-3 pt-12 transition-transform duration-700 group-hover:scale-[1.025] group-focus-visible:scale-[1.025]"
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-[1.025] group-focus-visible:scale-[1.025] ${
+                      member.portraitKind === "photo"
+                        ? "object-cover object-[50%_35%]"
+                        : "object-contain object-bottom px-3 pt-12"
+                    }`}
                   />
                   <span
                     className="absolute right-4 bottom-4 w-11 h-11 flex items-center justify-center bg-lime text-teal text-xl transition-transform group-hover:-translate-y-1"

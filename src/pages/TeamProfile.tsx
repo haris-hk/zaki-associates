@@ -35,12 +35,21 @@ export default function TeamProfile() {
               <p className="text-offwhite/75 leading-8 max-w-lg mb-8">
                 {profile.summary}
               </p>
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-block text-sm text-lime underline underline-offset-8 break-all"
-              >
-                {profile.email}
-              </a>
+              {profile.email ? (
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="inline-block text-sm text-lime underline underline-offset-8 break-all"
+                >
+                  {profile.email}
+                </a>
+              ) : (
+                <Link
+                  to="/about#contact"
+                  className="inline-block text-sm text-lime underline underline-offset-8"
+                >
+                  Contact our team →
+                </Link>
+              )}
             </div>
             <div className="bg-[#dce4db] overflow-hidden">
               <img
@@ -49,7 +58,11 @@ export default function TeamProfile() {
                 width="608"
                 height="658"
                 fetchPriority="high"
-                className="w-full aspect-[1/1.05] object-contain object-bottom pt-10 px-5"
+                className={`w-full aspect-[1/1.05] ${
+                  profile.portraitKind === "photo"
+                    ? "object-cover object-[50%_35%]"
+                    : "object-contain object-bottom pt-10 px-5"
+                }`}
               />
             </div>
           </div>
@@ -155,7 +168,11 @@ export default function TeamProfile() {
                     width="96"
                     height="112"
                     loading="lazy"
-                    className="w-20 sm:w-24 h-28 object-contain object-bottom bg-[#dce4db] shrink-0"
+                    className={`w-20 sm:w-24 h-28 bg-[#dce4db] shrink-0 ${
+                      member.portraitKind === "photo"
+                        ? "object-cover object-[50%_35%]"
+                        : "object-contain object-bottom"
+                    }`}
                   />
                   <div>
                     <h3 className="font-display text-xl sm:text-2xl mb-2">
