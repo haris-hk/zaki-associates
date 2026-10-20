@@ -3,6 +3,7 @@ import { team } from "../data/team"
 
 export default function TeamProfile() {
   const { id } = useParams()
+  if (id === "nehal-zaki") return <Navigate to="/team/nihal-zaki" replace />
   const profile = team.find(
     (member) =>
       member.id === id || (id === "mohammed-zaki" && member.id === "zaki"),

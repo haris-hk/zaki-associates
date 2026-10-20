@@ -1,10 +1,10 @@
 import usmanPortrait from "../assets/usman-shaikh.png"
-import nehalPortrait from "../assets/nehal-zaki.png"
+import nihalPortrait from "../assets/nihal-zaki.png"
 import zakiPortrait from "../assets/Mohammed-Zaki-1-1.png"
 import javedPortrait from "../assets/1221.png"
 import asadPortrait from "../assets/121.png"
 
-// Founding team verified against published profiles; Usman and Nehal biographies supplied by the firm.
+// Founding team verified against published profiles; Usman and Nihal biographies supplied by the firm.
 export const team = [
   {
     id: "zaki",
@@ -131,17 +131,17 @@ export const team = [
     source: "Professional biography supplied by the firm, October 2026",
   },
   {
-    id: "nehal-zaki",
-    name: "Nehal Zaki",
+    id: "nihal-zaki",
+    name: "Nihal Zaki",
     role: "Chartered Accountant · ACCA & ICAEW Member",
     area: "Financial reporting, taxation & FP&A",
-    image: nehalPortrait,
+    image: nihalPortrait,
     portraitKind: "cutout",
     email: "",
     years: "10+",
     summary:
       "Financial reporting, taxation and FP&A expertise across media, entertainment and shipping.",
-    bio: "Nehal Zaki is a chartered accountant and finance professional with membership in both ACCA and ICAEW, and an MSc in Accounting and Finance from BPP University. He brings over a decade of progressive financial leadership, including eight years in media and entertainment and nearly three years in shipping. His work combines technical expertise in reporting, taxation and compliance with financial planning and analysis, helping executive teams strengthen controls, improve operational efficiency and support commercial growth.",
+    bio: "Nihal Zaki is a chartered accountant and finance professional with membership in both ACCA and ICAEW, and an MSc in Accounting and Finance from BPP University. He brings over a decade of progressive financial leadership, including eight years in media and entertainment and nearly three years in shipping. His work combines technical expertise in reporting, taxation and compliance with financial planning and analysis, helping executive teams strengthen controls, improve operational efficiency and support commercial growth.",
     experience: [
       "Eight years of experience in the media and entertainment industry, alongside nearly three years in shipping.",
       "Managed complex revenue recognition in line with industry-specific standards and contractual requirements.",
