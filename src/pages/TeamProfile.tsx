@@ -104,7 +104,9 @@ export default function TeamProfile() {
             {profile.memberships.length > 0 && (
               <div className="mt-10">
                 <h3 className="font-display text-2xl mb-5">
-                  Fellow memberships
+                  {profile.id === "zaki"
+                    ? "Fellow memberships"
+                    : "Professional memberships"}
                 </h3>
                 <ul className="space-y-3 text-sm text-charcoal-muted">
                   {profile.memberships.map((item) => (

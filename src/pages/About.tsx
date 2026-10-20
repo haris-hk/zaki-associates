@@ -200,12 +200,14 @@ export default function About() {
               corporate finance. Get to know the people behind our practice.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-9 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-9 lg:gap-8">
             {team.map((member, i) => (
               <Link
                 key={member.id}
                 to={`/team/${member.id}`}
-                className="team-card group block min-w-0"
+                className={`team-card group block min-w-0 lg:col-span-2 ${
+                  team.length === 5 && i === 3 ? "lg:col-start-2" : ""
+                }`}
               >
                 <div className="relative bg-sage overflow-hidden aspect-[4/4.5]">
                   <span
