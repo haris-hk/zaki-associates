@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router';
+import logoDark from '../assets/logo-dark.svg';
+import logoLight from '../assets/logo-light.svg';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,15 +49,9 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgClass}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link to="/" className={`transition-colors duration-300 ${navClass}`}>
-          <div className="flex flex-col leading-none">
-            <span className="font-display text-[11px] lg:text-[13px] font-medium tracking-[0.2em] uppercase">
-              M. ZAKI & ASSOCIATES
-            </span>
-            <span className="text-[9px] lg:text-[10px] tracking-[0.3em] uppercase opacity-60 mt-0.5 font-body">
-              CHARTERED ACCOUNTANTS
-            </span>
-          </div>
+        <Link to="/" aria-label="M. Zaki & Associates — Home" className="relative block w-[160px] lg:w-[190px] shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+          <img src={logoDark} alt="M. Zaki & Associates, Chartered Accountants" width="1533" height="491" className={`block w-full h-auto transition-opacity duration-300 ${isDark ? 'opacity-0' : 'opacity-100'}`} />
+          <img src={logoLight} alt="" aria-hidden="true" width="935" height="300" className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${isDark ? 'opacity-100' : 'opacity-0'}`} />
         </Link>
 
         {/* Desktop links */}

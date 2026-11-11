@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import logoLight from '../assets/logo-light.svg';
 
 export default function Footer() {
   return (
@@ -9,14 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="mb-4">
-              <div className="text-[11px] tracking-[0.25em] uppercase font-body font-medium">
-                M. ZAKI & ASSOCIATES
-              </div>
-              <div className="text-[9px] tracking-[0.3em] uppercase opacity-40 mt-1">
-                CHARTERED ACCOUNTANTS
-              </div>
-            </div>
+            <Link to="/" aria-label="M. Zaki & Associates — Home" className="inline-block w-[240px] sm:w-[280px] max-w-full rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current">
+              <img src={logoLight} alt="M. Zaki & Associates, Chartered Accountants" width="935" height="300" loading="lazy" className="block w-full h-auto" />
+            </Link>
             <p className="font-display italic text-xl text-[#F7F8F4]/70 mt-6 leading-relaxed">
               Strategic Insight. Lasting Impact.
             </p>
