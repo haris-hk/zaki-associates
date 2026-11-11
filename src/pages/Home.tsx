@@ -3,6 +3,7 @@ import EnquiryForm from '../components/EnquiryForm';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import StarburstIcon from '../components/StarburstIcon';
+import zakiPortrait from '../assets/Mohammed-Zaki-1-1.png';
 
 const trustItems = [
   'Data-Driven Strategies',
@@ -141,11 +142,15 @@ export default function Home() {
           {/* Portrait */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 w-1 bg-[#0B4A46]/20" />
-            <img decoding="async" loading="lazy"
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=850&fit=crop&auto=format"
-              alt="M. Zaki, Founder"
-              className="w-full h-[500px] object-cover pl-4"
-            />
+            <div className="ml-4 bg-[#dce4db] overflow-hidden">
+              <img decoding="async" loading="lazy"
+                src={zakiPortrait}
+                alt="Mohammed Zaki, Founder & Principal"
+                width="608"
+                height="658"
+                className="w-full h-[400px] sm:h-[500px] object-contain object-bottom pt-10 px-4 sm:px-8"
+              />
+            </div>
             <div className="mt-4 pl-4">
               <div className="font-display text-lg font-light text-[#1A1A18]">M. Zaki</div>
               <div className="text-[10px] tracking-[0.2em] uppercase text-[#0B4A46] font-body mt-1">
